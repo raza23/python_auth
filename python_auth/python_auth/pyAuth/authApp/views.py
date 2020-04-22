@@ -26,3 +26,10 @@ def login_user(request):
             return redirect('login')
     else:
         return render(request, 'auth/login.html', {})
+
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, ('Logged Out'))
+    return redirect('home')
+    # Redirect to a success page.
